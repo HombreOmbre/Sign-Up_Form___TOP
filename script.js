@@ -1,13 +1,6 @@
 const divForInputs = document.querySelectorAll('.input');
-
-// styling label
-divForInputs.forEach(div => div.querySelector('input').addEventListener('click', () => {
-    const label = div.querySelector('label');
-    label.style.transform = "translateX(0)";
-}));
-
-// start validation for all inputs
-divForInputs.forEach(div => div.querySelector('input').addEventListener('blur', checkActiveInput)); 
+const passwordPreview = document.querySelectorAll('.eye');
+let pswToggle = false;
 
 function checkActiveInput() {
         this.removeEventListener('blur', checkActiveInput);
@@ -217,3 +210,29 @@ function showSecPasswordInfo(boolean, div, psw) {
         `;
     }
 };
+
+
+// styling label
+divForInputs.forEach(div => div.querySelector('input').addEventListener('click', () => {
+    const label = div.querySelector('label');
+    label.style.transform = "translateX(0)";
+}));
+
+// start validation for all inputs
+divForInputs.forEach(div => div.querySelector('input').addEventListener('blur', checkActiveInput)); 
+
+passwordPreview.forEach(btn => btn.addEventListener('mousedown', () => {
+    pswToggle = true;
+    if (pswToggle) {
+        btn.parentElement.querySelector('input').type = 'text';
+    }
+}));
+
+passwordPreview.forEach(btn => btn.addEventListener('mouseup', () => {
+    pswToggle = false;
+    if (pswToggle) {
+        btn.parentElement.querySelector('input').type = 'text';
+    } else {
+        btn.parentElement.querySelector('input').type = 'password';
+    }
+}));

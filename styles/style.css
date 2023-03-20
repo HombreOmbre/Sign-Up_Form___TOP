@@ -1,0 +1,259 @@
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: fixed url('../images/background.svg') center center no-repeat ;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+span.icon {
+    font-size: .8rem;
+    vertical-align: bottom;
+}
+
+ul {
+    list-style-type: none;
+    font-size: .9rem;
+}
+
+li.invalid {
+    color: rgb(232, 20, 20);
+    font-size: .85rem;
+}
+
+li.valid {
+    color: rgb(1, 167, 1);
+    font-size: .85rem;
+}
+
+span.icon2 {
+    font-size: .6rem;
+    vertical-align: bottom;
+}
+
+.container {
+    width: clamp(55%, 1000px, 90%);
+    background: rgba(255, 255, 255, 0.13);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 4px solid rgba(255, 255, 255, 0.68);
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    gap: 10px;
+}
+
+.left-side {
+    flex: 0%;
+    width: max(50%, 100%);
+    height: auto;
+    gap: 5px;
+}
+
+.img-container {
+    width: max(50%, 100%);
+    padding: 20px;
+}
+
+.small {
+    font-size: .8rem;
+    color: rgb(232, 232, 232);
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.right-side .small {
+    margin-left: 0;
+}
+
+.special {
+    font-weight: 700;
+    color: #e4822d;
+    text-decoration: none;
+}
+
+.right-side {
+    flex: 0%;
+    width: max(50%, 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.title h2 {
+    font-weight: 700;
+    font-size: 32px;
+    color: #eee;
+}
+
+form {
+    width: clamp(100%, 500px, 80% );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+
+input {
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #eee;
+    outline: none;
+    padding: 5px;
+    font-size: 18px;
+    color: #eee;
+    border-radius: 5px 5px 0 0;
+}
+
+label {
+    transform: translateY(30px);
+    transition: transform .3s ease-in;
+    color: #eee;
+    font-weight: 700;
+}
+
+label.valid  {
+    color: rgb(1, 167, 1);
+}
+
+input.valid,
+input.valid:focus {
+    border-bottom: 2px solid rgb(1, 167, 1);
+    background: rgba(1, 167, 1, .1);
+}
+
+label.invalid {
+    color: rgb(232, 20, 20);
+}
+
+input.invalid,
+input.invalid:focus {
+    border-bottom: 2px solid rgb(232, 20, 20);
+    background: rgba(181, 22, 22, .1);
+}
+
+p.invalid {
+    color: rgb(232, 20, 20);
+    font-size: .8rem;
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.right-side > div {
+    margin-bottom: 20px;
+}
+
+.right-side .small {
+    margin-top: -10px;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+.button-container {
+    width: 100%;
+    margin-top: 25px;
+}
+
+.submit {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    padding: 15px 50px;
+    color: #eee;
+    font-size: 1rem;
+    font-weight: 700;
+    background: #e4822d;
+    border-radius: 5px;
+    border: 2px solid #eee;
+    -webkit-box-shadow: 5px 5px 15px 1px rgba(53, 53, 53, 1);
+    -moz-box-shadow: 5px 5px 15px 1px rgba(53, 53, 53, 1);
+    box-shadow: 5px 5px 15px 1px rgba(53, 53, 53, 1);
+}
+
+.submit:hover {
+    background: #bd6c25;
+    transform: scale(1.05);
+    transition: transform .3s ease-in;
+}
+
+.login p {
+    color: #eee;
+    margin-top: 20px;
+}
+
+a:hover {
+    text-decoration: underline;
+    transition: all 1s ease-in;
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(35px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 425px) {
+    .container {
+        padding: 10px;
+    }
+
+    .img-container {
+        padding: 0;
+    }
+
+    .right-side {
+        padding: 0px;
+    }
+}

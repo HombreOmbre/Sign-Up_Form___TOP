@@ -143,6 +143,22 @@ input {
     border-radius: 5px 5px 0 0;
 }
 
+.psw {
+    position: relative;
+}
+
+.eye {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 30px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
 label {
     transform: translateY(30px);
     transition: transform .3s ease-in;
